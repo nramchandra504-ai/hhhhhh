@@ -131,51 +131,52 @@ channels:[
 
 /* ---------- FINAL GROUP STRUCTURE ---------- */
 
-const data = {
+const data = {};
 
-"B.Com General - Semester 6": [
-...commonLanguages,
-...commerceCore
-],
+data["B.Com General - Semester 6"] =
+    commonLanguages.concat(commerceCore);
 
 
-"B.Com Honors - Semester 6": [
-...commonLanguages,
-{
-name:"International Finance",
-channels:[
-{name:"Hasham Ali Khan",links:[
-"https://www.youtube.com/playlist?list=PLWJDzVuPkXAnNpRjN6InK65R7ndvpYZUf"
-]}
-]
-},
-...commerceCore
-],
+data["B.Com Honors - Semester 6"] =
+    commonLanguages.concat([
+        {
+            name:"International Finance",
+            channels:[
+                {name:"Hasham Ali Khan",links:[
+                    "https://www.youtube.com/playlist?list=PLWJDzVuPkXAnNpRjN6InK65R7ndvpYZUf"
+                ]}
+            ]
+        }
+    ]).concat(commerceCore);
 
 
-"B.Com Computer Applications - Semester 6": [
-...commonLanguages,
-...commerceCore.filter(subject => subject.name !== "Accounting Standards"),
-{
-name:"Cybersecurity",
-channels:[
-{name:"Whole Subject",links:[
-"https://www.youtube.com/playlist?list=PLtfg0YD2YYUQMZp4bRkeZI0JXWHGqh8vo"
-]}
-]
-}
-],
+data["B.Com Computer Applications - Semester 6"] =
+    commonLanguages.concat(
+        commerceCore.filter(function(subject){
+            return subject.name !== "Accounting Standards";
+        })
+    ).concat([
+        {
+            name:"Cybersecurity",
+            channels:[
+                {name:"Whole Subject",links:[
+                    "https://www.youtube.com/playlist?list=PLtfg0YD2YYUQMZp4bRkeZI0JXWHGqh8vo"
+                ]}
+            ]
+        }
+    ]);
 
 
-"B.Com Business Analytics - Semester 6": [
-...commonLanguages,
-...commerceCore.filter(subject => subject.name !== "Accounting Standards"),
-{
-name:"Business Application of Emerging Technologies",
-channels:[
-{name:"(Add Playlist Here)",links:["#"]}
-]
-}
-]
-
-};
+data["B.Com Business Analytics - Semester 6"] =
+    commonLanguages.concat(
+        commerceCore.filter(function(subject){
+            return subject.name !== "Accounting Standards";
+        })
+    ).concat([
+        {
+            name:"Business Application of Emerging Technologies",
+            channels:[
+                {name:"(Add Playlist Here)",links:["#"]}
+            ]
+        }
+    ]);
