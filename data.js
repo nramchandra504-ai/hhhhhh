@@ -131,7 +131,7 @@ channels:[
 
 /* ---------- FINAL GROUP STRUCTURE ---------- */
 
-const data = {};
+window.data = {};
 
 data["B.Com General - Semester 6"] =
     commonLanguages.concat(commerceCore);
@@ -180,3 +180,4 @@ data["B.Com Business Analytics - Semester 6"] =
             ]
         }
     ]);
+
